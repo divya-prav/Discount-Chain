@@ -59,6 +59,7 @@ const rocky = {
    coupon: true,
 }
 
+//function to get the total price
 
 function getTotalPrice(pricePerRefill, noOfRefills) {
 
@@ -66,16 +67,22 @@ function getTotalPrice(pricePerRefill, noOfRefills) {
 
 }
 
+//function to get the subscription discount
+
 function getSubscriptionDiscount(totalPrice, hasSubscription) {
 
    return hasSubscription ? totalPrice * 0.25 : 0;
 
 }
 
+//function to get the coupon discount
+
 function getCouponDiscount(hasCoupon) {
 
    return hasCoupon ? 10 : 0;
 }
+
+//main function to get grand total
 
 function grandTotal(customer_obj) {
 
@@ -96,6 +103,7 @@ function grandTotal(customer_obj) {
 
 }
 
+// function calling
 grandTotal(timmy);
 grandTotal(sarah);
 grandTotal(rocky);
