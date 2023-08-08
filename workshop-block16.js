@@ -29,65 +29,67 @@ Step 5: Declare a const couponDiscount and store the value by calling the functi
 
 Step 6 : find the grand-total by substracting the subscriptionDiscount and couponDiscount from totalPrice 
 
-Step 7: console log the grand total
+Step 7 : console log the grand total
+
+step 8 : call the grandTotal function by passing the customer object in the arguments.
  
  
 */
 const timmy = {
-    prescription: "acetaminophen",
-    pricePerRefill: 25,
-    refills: 3,
-    subscription: false,
-    coupon: true,
+   prescription: "acetaminophen",
+   pricePerRefill: 25,
+   refills: 3,
+   subscription: false,
+   coupon: true,
 };
 
 const sarah = {
-    prescription: "diphenhydramine",
-    pricePerRefill: 50,
-    refills: 1,
-    subscription: true,
-    coupon: false,
+   prescription: "diphenhydramine",
+   pricePerRefill: 50,
+   refills: 1,
+   subscription: true,
+   coupon: false,
 }
 
 const rocky = {
-    prescription: "phenylephrine",
-    pricePerRefill: 30,
-    refills: 5,
-    subscription: true,
-    coupon: true,
+   prescription: "phenylephrine",
+   pricePerRefill: 30,
+   refills: 5,
+   subscription: true,
+   coupon: true,
 }
 
 
- function getTotalPrice(pricePerRefill,noOfRefills){
+function getTotalPrice(pricePerRefill, noOfRefills) {
 
-    return pricePerRefill * noOfRefills;  
+   return pricePerRefill * noOfRefills;
 
- }
+}
 
- function getSubscriptionDiscount(totalPrice,hasSubscription){
-    
-    return hasSubscription ? totalPrice * 0.25 : 0;
+function getSubscriptionDiscount(totalPrice, hasSubscription) {
 
- }
+   return hasSubscription ? totalPrice * 0.25 : 0;
 
- function getCouponDiscount(hasCoupon){
+}
 
-    return hasCoupon ? 10 : 0;
- }
+function getCouponDiscount(hasCoupon) {
 
-function grandTotal(customer_obj){
+   return hasCoupon ? 10 : 0;
+}
 
-   const totalPrice = getTotalPrice(customer_obj.pricePerRefill,customer_obj.refills);
-     
+function grandTotal(customer_obj) {
 
-   const subscriptionDiscount = getSubscriptionDiscount(totalPrice,customer_obj.subscription);
+   const totalPrice = getTotalPrice(customer_obj.pricePerRefill, customer_obj.refills);
 
-  
+
+   const subscriptionDiscount = getSubscriptionDiscount(totalPrice, customer_obj.subscription);
+
+
 
    const couponDiscount = getCouponDiscount(customer_obj.coupon);
 
 
-   const finalAmount = totalPrice - subscriptionDiscount -couponDiscount ;
+   const finalAmount = totalPrice - subscriptionDiscount - couponDiscount;
 
    console.log(`Your grand total is $${finalAmount}`);
 
